@@ -1,0 +1,49 @@
+<!-- <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="date" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title" />
+  </mat-form-field>
+  <button mat-raised-button type="submit" [disabled]="!appointmentForm.valid">
+    Add Appointment
+  </button>
+</form> -->
+
+<form
+  [formGroup]="appointmentForm"
+  (ngSubmit)="onSubmit()"
+  class="appointment-form"
+>
+  <mat-form-field appearance="fill">
+    <mat-label>Date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="date" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="appointmentForm.get('date')?.hasError('required')">
+      Date is required
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Title</mat-label>
+    <input matInput formControlName="title" />
+    <mat-error *ngIf="appointmentForm.get('title')?.hasError('required')">
+      Title is required
+    </mat-error>
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="!appointmentForm.valid"
+    style="width: 180px"
+  >
+    Add Appointment
+  </button>
+</form>

@@ -1,0 +1,6 @@
+<div class="appointment" cdkDrag [cdkDragData]="appointment">
+  <span>{{ appointment.title }}</span>
+  <button mat-icon-button (click)="deleteAppointment()">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>

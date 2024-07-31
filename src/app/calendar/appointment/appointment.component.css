@@ -1,0 +1,25 @@
+.appointment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e0f7fa;
+    border: 1px solid #b2dfdb;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 8px;
+    cursor: move;
+    /* Indicates the element can be dragged */
+    position: relative;
+}
+
+.appointment span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #00796b;
+}
+
+.appointment button {
+    color: #d32f2f;
+    /* Red color for the delete button */
+}

@@ -1,0 +1,125 @@
+.container {
+    /* max-width: 900px; */
+    margin: 0px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    /* border: 1px solid #ddd; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.date-header {
+    margin-bottom: 20px;
+}
+
+.date-header p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #3e8e41;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.table th {
+    background-color: #f0f0f0;
+}
+
+.day {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.tasks {
+    height: 120px;
+    /* border: 1px solid #ddd; */
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.task {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.task:last-child {
+    border-bottom: none;
+}
+
+.grab {
+    background-color: #007bff;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: grab;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+}
+
+/* .grab {
+    cursor: move;
+} */
+
+.title {
+    background-color: #007bff;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: grab;
+}
+
+.title:active {
+    cursor: grabbing;
+}
+
+.title:hover {
+    background-color: #0056b3;
+}
+
+.empty {
+    background-color: #f9f9f9;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

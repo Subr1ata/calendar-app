@@ -1,0 +1,71 @@
+<div
+  class="container"
+  cdkDropListGroup
+  style="
+    display: flex;
+    gap: 20px;
+    justify-items: center;
+    justify-content: center;
+  "
+>
+  <app-appointment-form></app-appointment-form>
+
+  <div style="display: flex; flex-direction: column; gap: 10px">
+    <div class="calendar-header">
+      <button mat-icon-button (click)="previousMonth()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <h2>{{ monthNames[currentMonth] }} {{ currentYear }}</h2>
+      <button mat-icon-button (click)="nextMonth()">
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </div>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th *ngFor="let weekDay of weekDayNames" class="text-center">
+            {{ weekDay }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let week of weeks">
+          <td
+            *ngFor="let dayObj of week"
+            class="text-center"
+            style="width: 100px"
+            [class.empty]="!dayObj.schedules"
+          >
+            <ng-container *ngIf="dayObj.schedules">
+              <span class="day">{{ dayObj.day }}</span>
+              <div
+                class="tasks"
+                cdkDropList
+                [cdkDropListData]="dayObj.schedules"
+                (cdkDropListDropped)="onDrop($event)"
+              >
+                <div
+                  *ngFor="let schedule of dayObj.schedules"
+                  cdkDrag
+                  class="grab task"
+                >
+                  <span class="title" [attr.data-date]="dayObj.date">
+                    {{ schedule.title }}
+                  </span>
+                  <button
+                    mat-icon-button
+                    color="warn"
+                    (click)="handleDeleteAppointment(schedule)"
+                  >
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </ng-container>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
